@@ -1,4 +1,5 @@
 # EX-Ropor
+##### ВЕРСИЯ 1.0.2.0
 ### Приложение предназначено для автоматизации процесса обновление списков оповещения системы "Рупор" (многоканальная система автоматического оповещения абонентов по телефонным линиям). 
 
 ![Иллюстрация к проекту](https://lh3.googleusercontent.com/-7EUrgoacWQ8/X-o2diV9VRI/AAAAAAAAGlM/uZrCvHXdaJcDsqN4N_hSnIIHvJCdBHnbgCLcBGAsYHQ/s16000/image.png)
@@ -14,8 +15,11 @@
 
 При работе программа использует три файла Excel: справка отсутствующих, общая база контактов, списки оповещения. Каждый столбец соответствует определённому параметру и должен совпадать с приведенном ниже примером.
 
+##### Список оповещения "по умолчанию"
 ![Список оповещения по умолчанию](https://lh3.googleusercontent.com/-1csEUbV7e0g/X-o0v6dZ_1I/AAAAAAAAGk0/gISi02tHUT4H5JbmjObZPt4KK-xpw0SQQCLcBGAsYHQ/s16000/image.png)
 
+##### Основная база контактов
 ![Основная база контактов](https://lh3.googleusercontent.com/-yUUCjGYw_Wo/X-o0sDUZP7I/AAAAAAAAGkw/VnAUF8gSP78qF4EIaKt7IP_3_NFk_9w7wCLcBGAsYHQ/s16000/image.png)
 
+##### Справка по отсутствующим
 ![Справка отсутствующих](https://lh3.googleusercontent.com/-21lxDBWUBgk/X-o0zGsF_gI/AAAAAAAAGk4/s-If7NMbKNMiBYwu-Im52Dd8Fy5hTkDfACLcBGAsYHQ/s16000/image.png)
