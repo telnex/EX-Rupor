@@ -3,21 +3,25 @@ Imports System.Text.RegularExpressions 'Регулярные выражения
 
 Public Class Form
     'Максимальное кол-во отстутствующих и абонентов в списке оповещения
-    Public count As Integer = 30
+    Public count As Integer = My.Settings.count
     'Список оповещения по умолчанию
-    Public cell() As String = {"A", "B", "C", "D", "E", "F"}
+    Public cell(My.Settings.list - 1) As String
 
+    Public Sub DataLoad()
+        Dim ABC() As String = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}
+        For ID = 0 To cell.GetUpperBound(0)
+            cell(ID) = ABC(ID)
+        Next
+    End Sub
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Process.GetProcessesByName("EXCEL").Length > 1 Then
             MsgBox("Найдены активные процессы EXCEL, возможно, предыдущий запуск данного приложения завершился ошибкой!" & vbCrLf & vbCrLf & "Используя ДИСПЕТЧЕР ЗАДАЧ завершите все процессы EXCEL.EXE", 0)
         End If
-
         TestBt.Enabled = False
         LoadBt.Enabled = False
         TextInfo.Text = "Нажмите кнопку " & Chr(34) & "Выбрать файл" & Chr(34) & " для загрузки файла Excel, затем нажмите " & Chr(34) & "Произвести анализ" & Chr(34) & ", чтобы узнать изменения в списках оповещения." & vbCrLf & vbCrLf
         TextInfo.Text += "Количество отсутствующих и абонентов в одном списке оповещения не должно превышать:  " & count & " чел." & vbCrLf
-
-
+        TextInfo.Text += "Количество списков оповещения:  " & My.Settings.list & " ." & vbCrLf
     End Sub
     Private Sub OpenBt_Click(sender As Object, e As EventArgs) Handles OpenBt.Click
         OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
@@ -29,9 +33,10 @@ Public Class Form
 
         TextInfo.Text += vbCrLf & vbCrLf & "Открыт файл " & OpenFileDialog.FileName & vbCrLf
         TestBt.Enabled = True
+        AddSet.Enabled = False
     End Sub
     Private Sub TestBt_Click(sender As Object, e As EventArgs) Handles TestBt.Click
-
+        DataLoad()
         Me.Cursor = Cursors.WaitCursor
 
         'Список отсутствующих
@@ -122,7 +127,8 @@ Public Class Form
         Dim marker As Boolean
         Dim link As String
         Dim Num As Integer = 0
-        Dim tbArray() As TextBox = New TextBox() {ListBox_1, ListBox_2, ListBox_3, ListBox_4, ListBox_5, ListBox_6}
+        Dim tbArray() As TextBox = New TextBox() {ListBox_1, ListBox_2, ListBox_3, ListBox_4, ListBox_5, ListBox_6, ListBox_7, ListBox_8, ListBox_9, ListBox_10}
+
 
         'Создаем новый файл Excel
         Dim List As New Excel.Application
@@ -132,6 +138,7 @@ Public Class Form
 
         TextInfo.Text = "ПРОЦЕСС ЗАПУЩЕН"
 
+        'ОСНОВНОЙ ПРОЦЕСС
         For ID As Integer = 0 To cell.GetUpperBound(0)
 
             TextInfo.Text += vbCrLf & vbCrLf & "В " & ID + 1 & " списке отсутствуют:" & vbCrLf & vbCrLf
@@ -237,7 +244,7 @@ Public Class Form
             List_Sheet.SaveAs(My.Computer.FileSystem.SpecialDirectories.Desktop & "\Списки оповещения\" & ID + 1 & "  список оповещения.xlsx")
 
             'Прогресс Бар
-            ProgressBar.Value += 45
+            ProgressBar.Value = ((ID + 1) / My.Settings.list) * 100
         Next
 
         'Закрываем новый список оповещения
@@ -255,10 +262,6 @@ Public Class Form
         ListAlert_Sheet = Nothing
         ListAlert = Nothing
 
-        'Прогресс Бар
-        ProgressBar.Value = 300
-        Me.Cursor = Cursors.Default
-
         LoadBt.Enabled = True
         TestBt.Enabled = False
         OpenBt.Enabled = False
@@ -270,6 +273,10 @@ Public Class Form
 
         'Избавляемся от мусора принудительно
         GC.Collect()
+
+        'Прогресс Бар
+        ProgressBar.Value = 120
+        Me.Cursor = Cursors.Default
 
     End Sub
     Private Sub LoadBt_Click(sender As Object, e As EventArgs) Handles LoadBt.Click
@@ -293,8 +300,13 @@ Public Class Form
 
     End Sub
 
-    Private Sub Title_Click(sender As Object, e As EventArgs) Handles Title.Click
+    Private Sub Title_Click(sender As Object, e As EventArgs) Handles Title.DoubleClick
         MsgBox("Автор: Гранкин С.С." & vbCrLf & "E-mail: tel.nex@yandex.ru" & vbCrLf & vbCrLf & "2021г.", 0)
 
+    End Sub
+
+    Private Sub AddSet_Click(sender As Object, e As EventArgs) Handles AddSet.Click
+        Dim sApp As New SetApp
+        sApp.ShowDialog()
     End Sub
 End Class

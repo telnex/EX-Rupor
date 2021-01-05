@@ -46,10 +46,16 @@ Partial Class Form
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.OpenBt = New System.Windows.Forms.Button()
         Me.Panel = New System.Windows.Forms.Panel()
+        Me.AddSet = New System.Windows.Forms.Button()
         Me.Title = New System.Windows.Forms.Label()
         Me.LoadBt = New System.Windows.Forms.Button()
         Me.TestBt = New System.Windows.Forms.Button()
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.ListBox_8 = New System.Windows.Forms.TextBox()
+        Me.ListBox_9 = New System.Windows.Forms.TextBox()
+        Me.ListBox_10 = New System.Windows.Forms.TextBox()
         Me.GroupBoxInfo.SuspendLayout()
         Me.BoxList.SuspendLayout()
         Me.TabControl.SuspendLayout()
@@ -60,7 +66,10 @@ Partial Class Form
         Me.TabPage5.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.TabPage7.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
         Me.Panel.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
+        Me.TabPage10.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBoxInfo
@@ -98,7 +107,7 @@ Partial Class Form
         Me.ProgressBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProgressBar.Location = New System.Drawing.Point(7, 337)
-        Me.ProgressBar.Maximum = 300
+        Me.ProgressBar.Maximum = 120
         Me.ProgressBar.Name = "ProgressBar"
         Me.ProgressBar.Size = New System.Drawing.Size(364, 16)
         Me.ProgressBar.TabIndex = 1
@@ -127,6 +136,8 @@ Partial Class Form
         Me.TabControl.Controls.Add(Me.TabPage6)
         Me.TabControl.Controls.Add(Me.TabPage7)
         Me.TabControl.Controls.Add(Me.TabPage8)
+        Me.TabControl.Controls.Add(Me.TabPage9)
+        Me.TabControl.Controls.Add(Me.TabPage10)
         Me.TabControl.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabControl.Location = New System.Drawing.Point(7, 19)
         Me.TabControl.Name = "TabControl"
@@ -319,6 +330,7 @@ Partial Class Form
         '
         'TabPage8
         '
+        Me.TabPage8.Controls.Add(Me.ListBox_8)
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Size = New System.Drawing.Size(372, 308)
@@ -332,9 +344,9 @@ Partial Class Form
         Me.OpenBt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.OpenBt.Location = New System.Drawing.Point(12, 13)
         Me.OpenBt.Name = "OpenBt"
-        Me.OpenBt.Size = New System.Drawing.Size(125, 37)
+        Me.OpenBt.Size = New System.Drawing.Size(100, 37)
         Me.OpenBt.TabIndex = 699
-        Me.OpenBt.Text = "Выбрать файл"
+        Me.OpenBt.Text = "Открыть"
         Me.OpenBt.UseVisualStyleBackColor = True
         '
         'Panel
@@ -342,6 +354,7 @@ Partial Class Form
         Me.Panel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel.Controls.Add(Me.AddSet)
         Me.Panel.Controls.Add(Me.Title)
         Me.Panel.Controls.Add(Me.LoadBt)
         Me.Panel.Controls.Add(Me.TestBt)
@@ -351,14 +364,25 @@ Partial Class Form
         Me.Panel.Size = New System.Drawing.Size(800, 65)
         Me.Panel.TabIndex = 6
         '
+        'AddSet
+        '
+        Me.AddSet.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AddSet.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AddSet.Location = New System.Drawing.Point(330, 13)
+        Me.AddSet.Name = "AddSet"
+        Me.AddSet.Size = New System.Drawing.Size(100, 37)
+        Me.AddSet.TabIndex = 701
+        Me.AddSet.Text = "Настройки"
+        Me.AddSet.UseVisualStyleBackColor = True
+        '
         'Title
         '
-        Me.Title.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Title.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Title.Font = New System.Drawing.Font("Cambria", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Title.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Title.Location = New System.Drawing.Point(395, 0)
+        Me.Title.Location = New System.Drawing.Point(428, 0)
         Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(393, 65)
+        Me.Title.Size = New System.Drawing.Size(372, 65)
         Me.Title.TabIndex = 7
         Me.Title.Text = "Программа автоматического обновления списков оповещения системы «Рупор»"
         Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -367,27 +391,89 @@ Partial Class Form
         '
         Me.LoadBt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LoadBt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.LoadBt.Location = New System.Drawing.Point(264, 13)
+        Me.LoadBt.Location = New System.Drawing.Point(224, 13)
         Me.LoadBt.Name = "LoadBt"
-        Me.LoadBt.Size = New System.Drawing.Size(125, 37)
+        Me.LoadBt.Size = New System.Drawing.Size(100, 37)
         Me.LoadBt.TabIndex = 698
-        Me.LoadBt.Text = "Загрузить в ""Рупор"""
+        Me.LoadBt.Text = "Загрузить"
         Me.LoadBt.UseVisualStyleBackColor = True
         '
         'TestBt
         '
         Me.TestBt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TestBt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.TestBt.Location = New System.Drawing.Point(143, 13)
+        Me.TestBt.Location = New System.Drawing.Point(118, 13)
         Me.TestBt.Name = "TestBt"
-        Me.TestBt.Size = New System.Drawing.Size(115, 37)
+        Me.TestBt.Size = New System.Drawing.Size(100, 37)
         Me.TestBt.TabIndex = 700
-        Me.TestBt.Text = "Произвести анализ"
+        Me.TestBt.Text = "Анализ"
         Me.TestBt.UseVisualStyleBackColor = True
         '
         'OpenFileDialog
         '
         Me.OpenFileDialog.FileName = "OpenFile"
+        '
+        'TabPage9
+        '
+        Me.TabPage9.Controls.Add(Me.ListBox_9)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage9.Size = New System.Drawing.Size(372, 308)
+        Me.TabPage9.TabIndex = 8
+        Me.TabPage9.Text = "9 список"
+        Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'TabPage10
+        '
+        Me.TabPage10.Controls.Add(Me.ListBox_10)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage10.Name = "TabPage10"
+        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage10.Size = New System.Drawing.Size(372, 308)
+        Me.TabPage10.TabIndex = 9
+        Me.TabPage10.Text = "10 список"
+        Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'ListBox_8
+        '
+        Me.ListBox_8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox_8.BackColor = System.Drawing.Color.White
+        Me.ListBox_8.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_8.Multiline = True
+        Me.ListBox_8.Name = "ListBox_8"
+        Me.ListBox_8.ReadOnly = True
+        Me.ListBox_8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_8.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_8.TabIndex = 504
+        Me.ListBox_8.TabStop = False
+        '
+        'ListBox_9
+        '
+        Me.ListBox_9.BackColor = System.Drawing.Color.White
+        Me.ListBox_9.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_9.Multiline = True
+        Me.ListBox_9.Name = "ListBox_9"
+        Me.ListBox_9.ReadOnly = True
+        Me.ListBox_9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_9.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_9.TabIndex = 504
+        Me.ListBox_9.TabStop = False
+        '
+        'ListBox_10
+        '
+        Me.ListBox_10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox_10.BackColor = System.Drawing.Color.White
+        Me.ListBox_10.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_10.Multiline = True
+        Me.ListBox_10.Name = "ListBox_10"
+        Me.ListBox_10.ReadOnly = True
+        Me.ListBox_10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_10.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_10.TabIndex = 504
+        Me.ListBox_10.TabStop = False
         '
         'Form
         '
@@ -419,7 +505,13 @@ Partial Class Form
         Me.TabPage6.PerformLayout()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
+        Me.TabPage8.ResumeLayout(False)
+        Me.TabPage8.PerformLayout()
         Me.Panel.ResumeLayout(False)
+        Me.TabPage9.ResumeLayout(False)
+        Me.TabPage9.PerformLayout()
+        Me.TabPage10.ResumeLayout(False)
+        Me.TabPage10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -451,4 +543,10 @@ Partial Class Form
     Friend WithEvents ListBox_6 As TextBox
     Friend WithEvents ListBox_7 As TextBox
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents AddSet As Button
+    Friend WithEvents ListBox_8 As TextBox
+    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents ListBox_9 As TextBox
+    Friend WithEvents TabPage10 As TabPage
+    Friend WithEvents ListBox_10 As TextBox
 End Class

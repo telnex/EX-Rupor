@@ -11,10 +11,10 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("EX-Rupor")>
 <Assembly: AssemblyDescription("Программа автоматического обновления списков оповещения системы «Рупор»")>
-<Assembly: AssemblyCompany("Центральная служба связи")>
+<Assembly: AssemblyCompany("GSS")>
 <Assembly: AssemblyProduct("EX-Rupor")>
 <Assembly: AssemblyCopyright("Гранкин С.С. tel.nex@yandex.ru ©  2021")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTrademark("EX-Rupor")>
 
 <Assembly: ComVisible(False)>
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' используя "*", как показано ниже:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.2.0")>
-<Assembly: AssemblyFileVersion("1.0.2.0")>
+<Assembly: AssemblyVersion("1.0.2.5")>
+<Assembly: AssemblyFileVersion("1.0.2.5")>
 <Assembly: NeutralResourcesLanguage("ru-RU")>

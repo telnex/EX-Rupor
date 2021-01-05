@@ -94,11 +94,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Form.Designer.vb">
+      <DependentUpon>Form.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetApp.Designer.vb">
+      <DependentUpon>SetApp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetApp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AboutBox1.Designer.vb">
@@ -123,8 +129,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Form.resx">
+      <DependentUpon>Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetApp.resx">
+      <DependentUpon>SetApp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>

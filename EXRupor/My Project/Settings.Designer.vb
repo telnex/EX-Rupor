@@ -53,6 +53,42 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
+        Public Property count() As Integer
+            Get
+                Return CType(Me("count"),Integer)
+            End Get
+            Set
+                Me("count") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
+        Public Property list() As Integer
+            Get
+                Return CType(Me("list"),Integer)
+            End Get
+            Set
+                Me("list") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property action() As Boolean
+            Get
+                Return CType(Me("action"),Boolean)
+            End Get
+            Set
+                Me("action") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
