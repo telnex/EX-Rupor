@@ -44,6 +44,11 @@ Partial Class Form
         Me.ListBox_7 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.ListBox_8 = New System.Windows.Forms.TextBox()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.ListBox_9 = New System.Windows.Forms.TextBox()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.ListBox_10 = New System.Windows.Forms.TextBox()
         Me.OpenBt = New System.Windows.Forms.Button()
         Me.Panel = New System.Windows.Forms.Panel()
         Me.AddSet = New System.Windows.Forms.Button()
@@ -51,11 +56,6 @@ Partial Class Form
         Me.LoadBt = New System.Windows.Forms.Button()
         Me.TestBt = New System.Windows.Forms.Button()
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.TabPage9 = New System.Windows.Forms.TabPage()
-        Me.TabPage10 = New System.Windows.Forms.TabPage()
-        Me.ListBox_8 = New System.Windows.Forms.TextBox()
-        Me.ListBox_9 = New System.Windows.Forms.TextBox()
-        Me.ListBox_10 = New System.Windows.Forms.TextBox()
         Me.GroupBoxInfo.SuspendLayout()
         Me.BoxList.SuspendLayout()
         Me.TabControl.SuspendLayout()
@@ -67,9 +67,9 @@ Partial Class Form
         Me.TabPage6.SuspendLayout()
         Me.TabPage7.SuspendLayout()
         Me.TabPage8.SuspendLayout()
-        Me.Panel.SuspendLayout()
         Me.TabPage9.SuspendLayout()
         Me.TabPage10.SuspendLayout()
+        Me.Panel.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBoxInfo
@@ -147,14 +147,15 @@ Partial Class Form
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.Transparent
         Me.TabPage1.Controls.Add(Me.ListBox_1)
+        Me.TabPage1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(372, 308)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "1 список"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'ListBox_1
         '
@@ -338,6 +339,68 @@ Partial Class Form
         Me.TabPage8.Text = "8 список"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
+        'ListBox_8
+        '
+        Me.ListBox_8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox_8.BackColor = System.Drawing.Color.White
+        Me.ListBox_8.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_8.Multiline = True
+        Me.ListBox_8.Name = "ListBox_8"
+        Me.ListBox_8.ReadOnly = True
+        Me.ListBox_8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_8.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_8.TabIndex = 504
+        Me.ListBox_8.TabStop = False
+        '
+        'TabPage9
+        '
+        Me.TabPage9.Controls.Add(Me.ListBox_9)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage9.Size = New System.Drawing.Size(372, 308)
+        Me.TabPage9.TabIndex = 8
+        Me.TabPage9.Text = "9 список"
+        Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'ListBox_9
+        '
+        Me.ListBox_9.BackColor = System.Drawing.Color.White
+        Me.ListBox_9.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_9.Multiline = True
+        Me.ListBox_9.Name = "ListBox_9"
+        Me.ListBox_9.ReadOnly = True
+        Me.ListBox_9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_9.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_9.TabIndex = 504
+        Me.ListBox_9.TabStop = False
+        '
+        'TabPage10
+        '
+        Me.TabPage10.Controls.Add(Me.ListBox_10)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage10.Name = "TabPage10"
+        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage10.Size = New System.Drawing.Size(372, 308)
+        Me.TabPage10.TabIndex = 9
+        Me.TabPage10.Text = "10 список"
+        Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'ListBox_10
+        '
+        Me.ListBox_10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox_10.BackColor = System.Drawing.Color.White
+        Me.ListBox_10.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox_10.Multiline = True
+        Me.ListBox_10.Name = "ListBox_10"
+        Me.ListBox_10.ReadOnly = True
+        Me.ListBox_10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ListBox_10.Size = New System.Drawing.Size(372, 308)
+        Me.ListBox_10.TabIndex = 504
+        Me.ListBox_10.TabStop = False
+        '
         'OpenBt
         '
         Me.OpenBt.Cursor = System.Windows.Forms.Cursors.Hand
@@ -413,68 +476,6 @@ Partial Class Form
         '
         Me.OpenFileDialog.FileName = "OpenFile"
         '
-        'TabPage9
-        '
-        Me.TabPage9.Controls.Add(Me.ListBox_9)
-        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(372, 308)
-        Me.TabPage9.TabIndex = 8
-        Me.TabPage9.Text = "9 список"
-        Me.TabPage9.UseVisualStyleBackColor = True
-        '
-        'TabPage10
-        '
-        Me.TabPage10.Controls.Add(Me.ListBox_10)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(372, 308)
-        Me.TabPage10.TabIndex = 9
-        Me.TabPage10.Text = "10 список"
-        Me.TabPage10.UseVisualStyleBackColor = True
-        '
-        'ListBox_8
-        '
-        Me.ListBox_8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ListBox_8.BackColor = System.Drawing.Color.White
-        Me.ListBox_8.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox_8.Multiline = True
-        Me.ListBox_8.Name = "ListBox_8"
-        Me.ListBox_8.ReadOnly = True
-        Me.ListBox_8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ListBox_8.Size = New System.Drawing.Size(372, 308)
-        Me.ListBox_8.TabIndex = 504
-        Me.ListBox_8.TabStop = False
-        '
-        'ListBox_9
-        '
-        Me.ListBox_9.BackColor = System.Drawing.Color.White
-        Me.ListBox_9.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox_9.Multiline = True
-        Me.ListBox_9.Name = "ListBox_9"
-        Me.ListBox_9.ReadOnly = True
-        Me.ListBox_9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ListBox_9.Size = New System.Drawing.Size(372, 308)
-        Me.ListBox_9.TabIndex = 504
-        Me.ListBox_9.TabStop = False
-        '
-        'ListBox_10
-        '
-        Me.ListBox_10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ListBox_10.BackColor = System.Drawing.Color.White
-        Me.ListBox_10.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox_10.Multiline = True
-        Me.ListBox_10.Name = "ListBox_10"
-        Me.ListBox_10.ReadOnly = True
-        Me.ListBox_10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ListBox_10.Size = New System.Drawing.Size(372, 308)
-        Me.ListBox_10.TabIndex = 504
-        Me.ListBox_10.TabStop = False
-        '
         'Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -507,11 +508,11 @@ Partial Class Form
         Me.TabPage7.PerformLayout()
         Me.TabPage8.ResumeLayout(False)
         Me.TabPage8.PerformLayout()
-        Me.Panel.ResumeLayout(False)
         Me.TabPage9.ResumeLayout(False)
         Me.TabPage9.PerformLayout()
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage10.PerformLayout()
+        Me.Panel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

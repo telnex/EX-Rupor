@@ -7,6 +7,7 @@ Public Class Form
     'Список оповещения по умолчанию
     Public cell(My.Settings.list - 1) As String
 
+    'Заполнение массива 
     Public Sub DataLoad()
         Dim ABC() As String = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}
         For ID = 0 To cell.GetUpperBound(0)
@@ -23,6 +24,14 @@ Public Class Form
         TextInfo.Text += "Количество отсутствующих и абонентов в одном списке оповещения не должно превышать:  " & count & " чел." & vbCrLf
         TextInfo.Text += "Количество списков оповещения:  " & My.Settings.list & " ." & vbCrLf
     End Sub
+    Private Sub Form_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If Me.Width > 1000 Then
+            Title.Font = New Font("Cambria", 17, FontStyle.Bold)
+        Else
+            Title.Font = New Font("Cambria", 11.25, FontStyle.Bold)
+        End If
+    End Sub
+
     Private Sub OpenBt_Click(sender As Object, e As EventArgs) Handles OpenBt.Click
         OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
         OpenFileDialog.Filter = "Файлы Excel (*.xlsx; *.xls)|*.xlsx; *.xlsx"
@@ -67,13 +76,18 @@ Public Class Form
                             ZamenaNAME(index) = Zamena(index)
                         End If
                     Else
-                        ZamenaNAME(index) = Zamena(index)
+                        If My.Settings.action = True Then
+                            ZamenaNAME(index) = Zamena(index)
+                        Else
+                            Zamena(index) = "ERROR"
+                            ZamenaNAME(index) = "ERROR"
+                        End If
                     End If
                 End If
-                'Else
-                '    'Костыль для заполнения пустых элементов массива
-                '    Zamena(index) = "ОШИБКА"
-                '    ZamenaNAME(index) = "ОШИБКА"
+            Else
+                'Костыль для заполнения пустых элементов массива
+                Zamena(index) = "ERROR"
+                ZamenaNAME(index) = "ERROR"
             End If
         Next
 
@@ -267,7 +281,7 @@ Public Class Form
         OpenBt.Enabled = False
 
         'Вывод инфы
-        TextInfo.Text += vbCrLf & vbCrLf & "Процесс анализа завершен, нажмите кнопку " & Chr(34) & "Загрузить в " & Chr(34) & "Рупор" & Chr(34) & "." & vbCrLf & vbCrLf
+        TextInfo.Text += vbCrLf & vbCrLf & "Процесс анализа завершен, нажмите кнопку " & Chr(34) & "Загрузить" & Chr(34) & "." & vbCrLf & vbCrLf
         TextInfo.SelectionStart = TextInfo.Text.Length
         TextInfo.ScrollToCaret()
 
@@ -296,17 +310,21 @@ Public Class Form
                                         FileIO.UIOption.AllDialogs, FileIO.UICancelOption.ThrowException)
         Next
 
-        MsgBox("Файлы скопированы в папку " & Chr(34) & "Автоматизация РУПОР" & Chr(34) & ". В течение нескольких минут Система " & Chr(34) & "Рупор" & Chr(34) & " обновит списки оповещения!", 0)
+        MsgBox("Файлы скопированы в папку " & Chr(34) & "Автоматизация РУПОР" & Chr(34) & "." & vbCrLf & "В течение нескольких минут Система " & Chr(34) & "Рупор" & Chr(34) & " обновит списки оповещения!", 0)
 
     End Sub
 
     Private Sub Title_Click(sender As Object, e As EventArgs) Handles Title.DoubleClick
-        MsgBox("Автор: Гранкин С.С." & vbCrLf & "E-mail: tel.nex@yandex.ru" & vbCrLf & vbCrLf & "2021г.", 0)
+        MsgBox("Автор: Гранкин С.С." & vbCrLf & "E-mail: tel.nex@yandex.ru", 0)
 
     End Sub
 
     Private Sub AddSet_Click(sender As Object, e As EventArgs) Handles AddSet.Click
         Dim sApp As New SetApp
         sApp.ShowDialog()
+    End Sub
+
+    Private Sub TextInfo_TextChanged(sender As Object, e As EventArgs) Handles TextInfo.TextChanged
+
     End Sub
 End Class

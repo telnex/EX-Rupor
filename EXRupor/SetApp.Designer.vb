@@ -23,17 +23,17 @@ Partial Class SetApp
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupSet = New System.Windows.Forms.GroupBox()
-        Me.LabelMax = New System.Windows.Forms.Label()
-        Me.LabelMlist = New System.Windows.Forms.Label()
-        Me.LAction = New System.Windows.Forms.Label()
-        Me.R_YES = New System.Windows.Forms.RadioButton()
-        Me.R_NO = New System.Windows.Forms.RadioButton()
-        Me.SaveSet = New System.Windows.Forms.Button()
-        Me.MAX = New System.Windows.Forms.NumericUpDown()
         Me.ListNum = New System.Windows.Forms.NumericUpDown()
+        Me.MAX = New System.Windows.Forms.NumericUpDown()
+        Me.R_NO = New System.Windows.Forms.RadioButton()
+        Me.R_YES = New System.Windows.Forms.RadioButton()
+        Me.LAction = New System.Windows.Forms.Label()
+        Me.LabelMlist = New System.Windows.Forms.Label()
+        Me.LabelMax = New System.Windows.Forms.Label()
+        Me.SaveSet = New System.Windows.Forms.Button()
         Me.GroupSet.SuspendLayout()
-        CType(Me.MAX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListNum, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MAX, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupSet
@@ -45,6 +45,7 @@ Partial Class SetApp
         Me.GroupSet.Controls.Add(Me.LAction)
         Me.GroupSet.Controls.Add(Me.LabelMlist)
         Me.GroupSet.Controls.Add(Me.LabelMax)
+        Me.GroupSet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.GroupSet.Location = New System.Drawing.Point(12, 12)
         Me.GroupSet.Name = "GroupSet"
         Me.GroupSet.Size = New System.Drawing.Size(215, 140)
@@ -52,32 +53,36 @@ Partial Class SetApp
         Me.GroupSet.TabStop = False
         Me.GroupSet.Text = "Основные настройки"
         '
-        'LabelMax
+        'ListNum
         '
-        Me.LabelMax.AutoSize = True
-        Me.LabelMax.Location = New System.Drawing.Point(6, 32)
-        Me.LabelMax.Name = "LabelMax"
-        Me.LabelMax.Size = New System.Drawing.Size(122, 13)
-        Me.LabelMax.TabIndex = 0
-        Me.LabelMax.Text = "MAX кол-во абонентов"
+        Me.ListNum.Location = New System.Drawing.Point(154, 57)
+        Me.ListNum.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.ListNum.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.ListNum.Name = "ListNum"
+        Me.ListNum.Size = New System.Drawing.Size(55, 20)
+        Me.ListNum.TabIndex = 11
+        Me.ListNum.Value = New Decimal(New Integer() {3, 0, 0, 0})
         '
-        'LabelMlist
+        'MAX
         '
-        Me.LabelMlist.AutoSize = True
-        Me.LabelMlist.Location = New System.Drawing.Point(6, 59)
-        Me.LabelMlist.Name = "LabelMlist"
-        Me.LabelMlist.Size = New System.Drawing.Size(86, 13)
-        Me.LabelMlist.TabIndex = 2
-        Me.LabelMlist.Text = "Кол-во списков"
+        Me.MAX.Increment = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.MAX.Location = New System.Drawing.Point(154, 30)
+        Me.MAX.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
+        Me.MAX.Minimum = New Decimal(New Integer() {30, 0, 0, 0})
+        Me.MAX.Name = "MAX"
+        Me.MAX.Size = New System.Drawing.Size(55, 20)
+        Me.MAX.TabIndex = 10
+        Me.MAX.Value = New Decimal(New Integer() {30, 0, 0, 0})
         '
-        'LAction
+        'R_NO
         '
-        Me.LAction.AutoSize = True
-        Me.LAction.Location = New System.Drawing.Point(6, 86)
-        Me.LAction.Name = "LAction"
-        Me.LAction.Size = New System.Drawing.Size(183, 13)
-        Me.LAction.TabIndex = 4
-        Me.LAction.Text = "Действие, при отсутствии замены"
+        Me.R_NO.AutoSize = True
+        Me.R_NO.Location = New System.Drawing.Point(114, 109)
+        Me.R_NO.Name = "R_NO"
+        Me.R_NO.Size = New System.Drawing.Size(68, 17)
+        Me.R_NO.TabIndex = 9
+        Me.R_NO.Text = "Удалить"
+        Me.R_NO.UseVisualStyleBackColor = True
         '
         'R_YES
         '
@@ -91,15 +96,32 @@ Partial Class SetApp
         Me.R_YES.Text = "Оставить"
         Me.R_YES.UseVisualStyleBackColor = True
         '
-        'R_NO
+        'LAction
         '
-        Me.R_NO.AutoSize = True
-        Me.R_NO.Location = New System.Drawing.Point(114, 109)
-        Me.R_NO.Name = "R_NO"
-        Me.R_NO.Size = New System.Drawing.Size(68, 17)
-        Me.R_NO.TabIndex = 9
-        Me.R_NO.Text = "Удалить"
-        Me.R_NO.UseVisualStyleBackColor = True
+        Me.LAction.AutoSize = True
+        Me.LAction.Location = New System.Drawing.Point(6, 86)
+        Me.LAction.Name = "LAction"
+        Me.LAction.Size = New System.Drawing.Size(183, 13)
+        Me.LAction.TabIndex = 4
+        Me.LAction.Text = "Действие, при отсутствии замены"
+        '
+        'LabelMlist
+        '
+        Me.LabelMlist.AutoSize = True
+        Me.LabelMlist.Location = New System.Drawing.Point(6, 59)
+        Me.LabelMlist.Name = "LabelMlist"
+        Me.LabelMlist.Size = New System.Drawing.Size(86, 13)
+        Me.LabelMlist.TabIndex = 2
+        Me.LabelMlist.Text = "Кол-во списков"
+        '
+        'LabelMax
+        '
+        Me.LabelMax.AutoSize = True
+        Me.LabelMax.Location = New System.Drawing.Point(6, 32)
+        Me.LabelMax.Name = "LabelMax"
+        Me.LabelMax.Size = New System.Drawing.Size(122, 13)
+        Me.LabelMax.TabIndex = 0
+        Me.LabelMax.Text = "MAX кол-во абонентов"
         '
         'SaveSet
         '
@@ -110,27 +132,6 @@ Partial Class SetApp
         Me.SaveSet.TabIndex = 1
         Me.SaveSet.Text = "Сохранить и выйти"
         Me.SaveSet.UseVisualStyleBackColor = True
-        '
-        'MAX
-        '
-        Me.MAX.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.MAX.Location = New System.Drawing.Point(154, 30)
-        Me.MAX.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
-        Me.MAX.Minimum = New Decimal(New Integer() {30, 0, 0, 0})
-        Me.MAX.Name = "MAX"
-        Me.MAX.Size = New System.Drawing.Size(55, 20)
-        Me.MAX.TabIndex = 10
-        Me.MAX.Value = New Decimal(New Integer() {30, 0, 0, 0})
-        '
-        'ListNum
-        '
-        Me.ListNum.Location = New System.Drawing.Point(154, 57)
-        Me.ListNum.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.ListNum.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.ListNum.Name = "ListNum"
-        Me.ListNum.Size = New System.Drawing.Size(55, 20)
-        Me.ListNum.TabIndex = 11
-        Me.ListNum.Value = New Decimal(New Integer() {3, 0, 0, 0})
         '
         'SetApp
         '
@@ -145,11 +146,11 @@ Partial Class SetApp
         Me.Name = "SetApp"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Настройки EX-Rupor"
+        Me.Text = "EX-Rupor"
         Me.GroupSet.ResumeLayout(False)
         Me.GroupSet.PerformLayout()
-        CType(Me.MAX, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListNum, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MAX, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
