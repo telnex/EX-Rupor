@@ -1,5 +1,5 @@
-# EX-Rupor
-##### ВЕРСИЯ 1.0.2.5
+# EX-Rupor 
+##### ВЕРСИЯ 1.0.2.5 | Visual Basic .Net (Visual Studio 2019)
 ***Приложение предназначено для автоматизации процесса обновление списков оповещения системы "Рупор" (многоканальная система автоматического оповещения абонентов по телефонным линиям).***
 
 ![Иллюстрация к проекту](https://lh3.googleusercontent.com/-NwqSOMaGj2Y/X_Tm05r2SFI/AAAAAAAAGqw/BHZllXn5IMIGAJbqrXvouThhSVZB2bHpgCLcBGAsYHQ/s16000/image.png)
