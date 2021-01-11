@@ -31,9 +31,13 @@ Partial Class SetApp
         Me.LabelMlist = New System.Windows.Forms.Label()
         Me.LabelMax = New System.Windows.Forms.Label()
         Me.SaveSet = New System.Windows.Forms.Button()
+        Me.GroupType = New System.Windows.Forms.GroupBox()
+        Me.type1 = New System.Windows.Forms.RadioButton()
+        Me.type2 = New System.Windows.Forms.RadioButton()
         Me.GroupSet.SuspendLayout()
         CType(Me.ListNum, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MAX, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupType.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupSet
@@ -126,18 +130,52 @@ Partial Class SetApp
         'SaveSet
         '
         Me.SaveSet.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SaveSet.Location = New System.Drawing.Point(103, 158)
+        Me.SaveSet.Location = New System.Drawing.Point(103, 239)
         Me.SaveSet.Name = "SaveSet"
         Me.SaveSet.Size = New System.Drawing.Size(124, 23)
         Me.SaveSet.TabIndex = 1
         Me.SaveSet.Text = "Сохранить и выйти"
         Me.SaveSet.UseVisualStyleBackColor = True
         '
+        'GroupType
+        '
+        Me.GroupType.Controls.Add(Me.type2)
+        Me.GroupType.Controls.Add(Me.type1)
+        Me.GroupType.Location = New System.Drawing.Point(12, 158)
+        Me.GroupType.Name = "GroupType"
+        Me.GroupType.Size = New System.Drawing.Size(215, 75)
+        Me.GroupType.TabIndex = 2
+        Me.GroupType.TabStop = False
+        Me.GroupType.Text = "Режим работы"
+        '
+        'type1
+        '
+        Me.type1.AutoSize = True
+        Me.type1.Location = New System.Drawing.Point(9, 19)
+        Me.type1.Name = "type1"
+        Me.type1.Size = New System.Drawing.Size(101, 17)
+        Me.type1.TabIndex = 0
+        Me.type1.Text = "Только анализ"
+        Me.type1.UseVisualStyleBackColor = True
+        '
+        'type2
+        '
+        Me.type2.AutoSize = True
+        Me.type2.Checked = True
+        Me.type2.Location = New System.Drawing.Point(9, 42)
+        Me.type2.Name = "type2"
+        Me.type2.Size = New System.Drawing.Size(162, 17)
+        Me.type2.TabIndex = 1
+        Me.type2.TabStop = True
+        Me.type2.Text = "Анализ и загрузка в Рупор"
+        Me.type2.UseVisualStyleBackColor = True
+        '
         'SetApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(239, 191)
+        Me.ClientSize = New System.Drawing.Size(239, 270)
+        Me.Controls.Add(Me.GroupType)
         Me.Controls.Add(Me.SaveSet)
         Me.Controls.Add(Me.GroupSet)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -151,6 +189,8 @@ Partial Class SetApp
         Me.GroupSet.PerformLayout()
         CType(Me.ListNum, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MAX, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupType.ResumeLayout(False)
+        Me.GroupType.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -164,4 +204,7 @@ Partial Class SetApp
     Friend WithEvents SaveSet As Button
     Friend WithEvents ListNum As NumericUpDown
     Friend WithEvents MAX As NumericUpDown
+    Friend WithEvents GroupType As GroupBox
+    Friend WithEvents type2 As RadioButton
+    Friend WithEvents type1 As RadioButton
 End Class
